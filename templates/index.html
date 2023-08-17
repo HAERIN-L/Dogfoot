@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WiFi Runner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="runner" style="background-image: url({{url_for('static', filename='images/face.png') }});">
+    </div>
+    <div class="destination" style="background-image: url({{ url_for('static', filename='images/destination.png') }});">
+    </div>
+    
+    <p>Current WiFi Signal Strength: <span id="signal-strength">Loading...</span>%</p>
+    
+    <form action="/" method="post" enctype="multipart/form-data">
+        Upload Face: <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    
+    <script>
+        function updateSignalStrength() {
+            fetch('/get_signal')
+                .then(response => response.json())
+                .then(data => {
+                    const signalStrengthElement = document.getElementById('signal-strength');
+                    signalStrengthElement.textContent = `${data.strength}`;
+                });
+        }
+
+        function updateRunnerPosition() {
+            fetch('/get_signal')
+                .then(response => response.json())
+                .then(data => {
+                    const runner = document.querySelector('.runner');
+                    const speed = Math.max(1, 100 - data.strength);
+                    runner.style.animationDuration = `${speed}s`;
+
+                    if (data.strength >= 95 && data.strength <= 100) {
+                        runner.classList.add('running');
+                    } else {
+                        runner.classList.remove('running');
+                    }
+                });
+        }
+
+        setInterval(updateSignalStrength, 1000);
+        setInterval(updateRunnerPosition, 1000);
+    </script>
+</body>
+</html>

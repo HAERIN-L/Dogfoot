@@ -1,0 +1,34 @@
+.runner {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    animation: moveRunner 10s linear infinite;
+}
+
+.destination {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
+@keyframes moveRunner {
+    100% {
+        left: 80%;
+    }
+}
+
+.running {
+    animation: run 0.5s steps(8) infinite;
+}
+
+@keyframes run {
+    100% {
+        background-position: 800px 0;
+    }
+}
