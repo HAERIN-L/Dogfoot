@@ -71,7 +71,7 @@ function updateSignalStrength() {
         });
 }
 function updateRunnerPosition(strength) {
-    const runner = document.querySelector('.runner');
+    const runner = document.querySelector('.section');
 
     let newPosition = (strength / 100) * 90; 
     runner.style.left = `calc(${newPosition}% - 100px)`; // 천천히 이동
@@ -87,5 +87,4 @@ function updateRunnerPosition(strength) {
 updateSignalStrength();
 // 그 이후에는 주기적으로 실행
 setInterval(updateSignalStrength, 1000);
-
 

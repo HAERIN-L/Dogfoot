@@ -27,7 +27,7 @@
 
 @keyframes moveRunner {
     100% {
-        left: calc(100% - 300px); /* 화면 폭 - (runner 폭 + destination 폭) */
+        left: calc(70% - 100px); /* 화면 폭 - (runner 폭 + destination 폭) */
     }
 }
 
@@ -115,4 +115,192 @@ body {
 }
 .upload-container input[type="file"] {
     display: none; 
+}
+.section {
+    position: relative;
+    top:500px;
+    height: 100px;
+    max-width: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: moveRunner 10s linear infinite;
+}
+
+.chest {
+    position: absolute;
+    top: -20%;
+    left: 23.7%;
+    width: 20%;
+    height: 10%;
+    /* transform: translateX(-50%); */
+}
+
+.face {
+    position: absolute;
+    z-index: 1;
+    top:-120%;
+    left: 23%;
+    width: 3%;
+    animation: updown 0.3s linear infinite alternate;
+}
+
+@keyframes updown{
+    from {margin-top:-8px;}
+    to {margin-top:0;}
+}
+.righthand {
+    position: absolute;
+    z-index: 1;
+    top:55%;
+    left: 27%;
+    width: 5%;
+    animation: righthand 0.5s linear infinite alternate;
+}
+
+.lefthand {
+    position: absolute;
+    z-index: 1;
+    top:18%;
+    left: 27%;
+    width: 16%;
+    animation: lefthand 0.5s linear infinite alternate;
+    transform-origin: 20% 100%;
+}
+
+@keyframes lefthand {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(20deg);
+}
+}
+
+@keyframes righthand {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(-20deg);
+}
+}
+
+.leftleg{
+    position: absolute;
+    z-index:-1;
+    top:100%; 
+    left:30%;
+    width : 17%;
+    animation: leftleg 0.5s linear infinite alternate;
+    transform-origin:60% 10%;
+    /* transform: translateX(-50%); */
+}
+
+.rightleg{
+    position: absolute;
+    /* z-index:-1; */
+    top:165%; 
+    left:0%;
+    width : 5%;
+    animation: rightleg 0.5s linear infinite alternate;
+    transform-origin:40% 10%;
+    /* transform: translateX(-50%); */
+}
+
+@keyframes leftleg {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(20deg);
+}
+}
+
+@keyframes rightleg {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(-20deg);
+}
+}
+
+@keyframes moveRunner {
+    100% {
+        left: calc(70% - 100px); /* 화면 폭 - (runner 폭 + destination 폭) */
+    }
+}
+
+/* =======mento======= */
+
+/* .m_section {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.m_section{
+    position: relative;
+    top:400px;
+    height: 100px;
+    max-width: -200px;
+}
+
+.m_chest {
+    position: absolute;
+    top: -20%;
+    left: 85%;
+    width: 20%;
+    height: 10%;
+    /* transform: translateX(-50%); */
+}
+
+.m_face {
+    position: absolute;
+    z-index: 1;
+    top:-110%;
+    left: 88%;
+    width: 3%;
+    animation: updown 0.3s linear infinite alternate;
+}
+
+.m_righthand {
+    position: absolute;
+    z-index: 1;
+    top:20%;
+    left: 81.5%;
+    width: 4%;
+    animation: righthand 0.5s linear infinite alternate;
+}
+
+.m_lefthand {
+    position: absolute;
+    z-index: 1;
+    top:18%;
+    left: 89%;
+    width: 16%;
+    animation: lefthand 0.5s linear infinite alternate;
+    transform-origin: 20% 100%;
+}
+
+.m_leftleg{
+    position: absolute;
+    /* z-index:-1; */
+    top:200%; 
+    left:87.8%;
+    width : 17%;
+    animation: leftleg 0.5s linear infinite alternate;
+    transform-origin:60% 10%;
+}
+
+.m_rightleg{
+    position: absolute;
+    /* z-index:-1; */
+    top:165%; 
+    left:77.8%;
+    width : 5%;
+    animation: rightleg 0.5s linear infinite alternate;
+    transform-origin:40% 10%;
+}
+html{
+    color: white;
 }

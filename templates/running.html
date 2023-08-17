@@ -50,9 +50,59 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="runner" style="background-image: url({{ url_for('static', filename='images/face.png') }});">
+    <!-- <div class="runner" style="background-image: url({{ url_for('static', filename='images/face.png') }});">
     </div>
     <div class="destination" style="background-image: url({{ url_for('static', filename='images/dest.png') }});">
+    </div> -->
+
+    <div class = "section">
+        <div class="run">
+            <div class="face">
+                <img src="{{url_for('static', filename='images/face.png')}}">
+            </div>
+            <div class="chest">
+                <img src="{{url_for('static', filename='images/chest.png')}}">
+            </div>
+            <!-- 팔 -->
+            <div class="lefthand">
+                <img src="{{url_for('static', filename='images/lefthand_.png')}}">
+            </div>
+            <div class="righthand">
+                <img src="{{url_for('static', filename='images/righthand_.png')}}">
+
+            </div>
+            <div class="leftleg">
+                <img src="{{url_for('static', filename='images/leftleg.png')}}">
+            </div>
+            <div class="rightleg">
+                <img src="{{url_for('static', filename='images/rightleg.png')}}">
+            </div>
+        </div>
+    </div>
+
+    <div class = "m_section">
+        <div class="m_run">
+            <div class="m_face">
+                <img src="{{url_for('static', filename='images/dest.png')}}">
+            </div>
+            <div class="m_chest">
+                <img src="{{url_for('static', filename='images/m_chest.png')}}">
+            </div>
+            <!-- 팔 -->
+            <div class="m_lefthand">
+                <img src="{{url_for('static', filename='images/m_lefthand.png')}}">
+            </div>
+            <div class="m_righthand">
+                <img src="{{url_for('static', filename='images/m_righthand.png')}}">
+
+            </div>
+            <div class="m_leftleg">
+                <img src="{{url_for('static', filename='images/m_leftleg.png')}}">
+            </div>
+            <div class="m_rightleg">
+                <img src="{{url_for('static', filename='images/m_rightleg.png')}}">
+            </div>
+        </div>
     </div>
     
     <p>Current WiFi Signal Strength: <span id="signal-strength">Loading...</span>%</p>
