@@ -1,34 +1,118 @@
+.destination {
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    background-position: center;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
 .runner {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     bottom: 20px;
     left: 0;
     animation: moveRunner 10s linear infinite;
 }
 
-.destination {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    position: absolute;
-    bottom: 20px;
-    right: 0;
+.running {
+    /* ... 달리기 모션 스타일 ... */
 }
 
 @keyframes moveRunner {
     100% {
-        left: 80%;
+        left: calc(100% - 300px); /* 화면 폭 - (runner 폭 + destination 폭) */
     }
 }
 
-.running {
-    animation: run 0.5s steps(8) infinite;
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/back.gif'); 
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
 }
 
-@keyframes run {
-    100% {
-        background-position: 800px 0;
-    }
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+}
+
+.title-image {
+    margin-top: 20px;
+    width: 70%; 
+    display: block;
+    margin: 20px auto;
+}
+
+.character {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150px;
+}
+
+.upload-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.custom-file-upload, .upload-container input[type="submit"] {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF69B4; 
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000; 
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #000;
+    transition: all 0.2s;
+}
+
+.custom-file-upload:after, .custom-file-upload:before, .upload-container input[type="submit"]:after, .upload-container input[type="submit"]:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.custom-file-upload, .upload-container input[type="submit"] {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #FF69B4; 
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #000; 
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #000; 
+    font-family: 'Press Start 2P', cursive; 
+    transition: all 0.2s;
+}
+.custom-file-upload:before, .upload-container input[type="submit"]:before {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #FF69B4;
+    bottom: -10px;
+    left: calc(50% - 10px);
+}
+
+.upload-container input[type="submit"]:hover {
+    background-color: #FF88CC; 
+    box-shadow: 3px 3px 0px #000;
+    transform: translateY(1px);
+}
+.upload-container input[type="file"] {
+    display: none; 
 }
